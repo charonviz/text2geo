@@ -12,6 +12,10 @@
 
 ---
 
+<p align="center">
+  <img src="imgs/map_hero.png" alt="text2geo — global coverage with population heatmap" width="100%">
+</p>
+
 **text2geo** turns messy, misspelled place names into precise latitude/longitude coordinates — entirely offline, with no API keys, no rate limits, and no costs. Powered by [GeoNames](https://www.geonames.org/) data and [rapidfuzz](https://github.com/rapidfuzz/RapidFuzz) for typo-tolerant matching.
 
 ## Features
@@ -25,17 +29,69 @@
 
 ## Coverage
 
-<p align="center">
-  <img src="imgs/map_world.png" alt="World Coverage" width="100%">
-</p>
+### 🌐 World Dataset
 
-<p align="center">
-  <img src="imgs/map_cis.png" alt="CIS Coverage" width="100%">
-</p>
+<table>
+<tr>
+<td width="65%">
+<img src="imgs/map_world.png" alt="World Coverage" width="100%">
+</td>
+<td width="35%">
 
-<p align="center">
-  <img src="imgs/map_russia.png" alt="Russia Coverage" width="100%">
-</p>
+**140,000+ cities across every country on Earth.**
+
+Covers all cities with population > 1,000 — from global capitals to small towns. Names available in dozens of languages, with full fuzzy matching support.
+
+```python
+geo = Geocoder(dataset="world")
+geo.geocode("Токио")     # → Tokyo
+geo.geocode("Мюнхен")    # → Munich
+geo.geocode("New Yrok")  # → New York
+```
+
+`~50 MB` &nbsp;·&nbsp; All countries &nbsp;·&nbsp; Any language
+
+</td>
+</tr>
+</table>
+
+### 🇷🇺 Russia & CIS Datasets
+
+<table>
+<tr>
+<td width="35%">
+
+**Russia** — every city, town, village and settlement across all 85 regions. The most detailed coverage available, including remote areas of Siberia and the Far East.
+
+```python
+geo = Geocoder(dataset="ru")
+geo.geocode("Краснадар")   # → Krasnodar
+geo.geocode("Питер")       # → Saint Petersburg
+```
+
+`~30 MB` &nbsp;·&nbsp; 200,000+ places &nbsp;·&nbsp; All 85 regions
+
+---
+
+**CIS** — complete coverage of all 12 former USSR countries. Every settlement in Russia plus full data for Ukraine, Belarus, Kazakhstan, Uzbekistan, Tajikistan, Kyrgyzstan, Turkmenistan, Azerbaijan, Armenia, Georgia, and Moldova.
+
+```python
+geo = Geocoder(dataset="cis")
+geo.geocode("Алмата")   # → Almaty 🇰🇿
+geo.geocode("Тбілісі")  # → Tbilisi 🇬🇪
+geo.geocode("Мінск")    # → Minsk 🇧🇾
+```
+
+`~60 MB` &nbsp;·&nbsp; 350,000+ places &nbsp;·&nbsp; 12 countries
+
+</td>
+<td width="65%">
+<img src="imgs/map_russia.png" alt="Russia Coverage" width="100%">
+<br>
+<img src="imgs/map_cis.png" alt="CIS Coverage" width="100%">
+</td>
+</tr>
+</table>
 
 ## Installation
 
