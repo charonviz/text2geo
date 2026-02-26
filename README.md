@@ -23,6 +23,20 @@
 - **Batch geocoding** — process thousands of names in seconds
 - **Zero config** — auto-downloads data on first use
 
+## Coverage
+
+<p align="center">
+  <img src="imgs/map_world.png" alt="World Coverage" width="100%">
+</p>
+
+<p align="center">
+  <img src="imgs/map_cis.png" alt="CIS Coverage" width="100%">
+</p>
+
+<p align="center">
+  <img src="imgs/map_russia.png" alt="Russia Coverage" width="100%">
+</p>
+
 ## Installation
 
 ```bash
@@ -32,7 +46,7 @@ pip install text2geo
 Or install from source:
 
 ```bash
-git clone https://github.com/yourname/text2geo.git
+git clone https://github.com/charonviz/text2geo.git
 cd text2geo
 pip install -e .
 ```
